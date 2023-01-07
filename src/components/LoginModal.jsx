@@ -10,6 +10,7 @@ const LoginModal = () => {
         </div>
         <div className='flex items-center justify-center w-1/2 bg-white'>
             LOGIN
+            <button className='absolute top-4 right-4'>X</button>
         </div>
     </div>
   )
