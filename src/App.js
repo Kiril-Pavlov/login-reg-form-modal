@@ -14,11 +14,12 @@ function App() {
         >
         Login
       </button>
-      <button className="border-2 bg-stone-50 hover:bg-stone-300 py-2 px-4 font-bold transition-all duration-300">
+      <button  onClick={()=>setIsRegisterOpen(!isRegisterOpen)} 
+        className="border-2 bg-stone-50 hover:bg-stone-300 py-2 px-4 font-bold transition-all duration-300">
         Register
       </button>
       <LoginModal isOpen={isLoginOpen} setIsOpen={setIsLoginOpen}/>
-      <RegisterModal/>
+      <RegisterModal  isOpen={isRegisterOpen} setIsOpen={setIsRegisterOpen}/>
     </div>
   );
 }
