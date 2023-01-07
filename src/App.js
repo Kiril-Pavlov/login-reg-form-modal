@@ -1,4 +1,8 @@
 import { useState } from "react";
+import LoginModal from "./components/LoginModal";
+import RegisterModal from "./components/RegisterModal";
+
+
 
 function App() {
   const [isLoginOpen,setIsLoginOpen] = useState(false)
@@ -11,6 +15,8 @@ function App() {
       <button className="border-2 bg-stone-50 hover:bg-stone-300 py-2 px-4 font-bold transition-all duration-300">
         Register
       </button>
+      <LoginModal/>
+      <RegisterModal/>
     </div>
   );
 }
