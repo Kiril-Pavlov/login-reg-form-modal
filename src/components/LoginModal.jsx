@@ -13,17 +13,17 @@ const LoginModal = ({isOpen,setIsOpen}) => {
         </div>
         <div className='flex items-center justify-center w-full md:w-1/2 bg-sky-50'>
             <div className='flex flex-col gap-3 w-80'>
-                <img src={logo} alt="logo" className='w-wull mx-auto drop-shadow-2xl'/>
+                <img src={logo} alt="logo" className='w-wull mx-auto drop-shadow-2xl mb-3'/>
                 <div className='flex flex-col'>
-                    <label htmlFor="">Username or Mail</label>
+                    <label htmlFor="" className='text-red-800 font-bold'>Username or Mail</label>
                     <input type="text"  className='bg-sky-50 border-b-2'/>
                 </div>
                 <div  className='flex flex-col'>
-                    <label htmlFor="">Password</label>
+                    <label htmlFor="" className='text-red-800 font-bold'>Password</label>
                     <input type="password" className='bg-sky-50 border-b-2'/>
                 </div>
                 <div className='flex items-center justify-center'>
-                    <button className='bg-red-800 text-sky-50 font-bold text-2xl py-1 px-8 rounded-full'>Login</button>
+                    <button className='bg-red-800 text-sky-50 font-bold text-2xl py-1 px-8 rounded-full mt-3'>Login</button>
                 </div>
             </div>
             <button className='absolute top-4 right-4' onClick={()=>setIsOpen(!isOpen)}>
