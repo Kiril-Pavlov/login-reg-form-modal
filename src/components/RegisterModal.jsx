@@ -13,7 +13,12 @@ const RegisterModal = ({ isOpen, setIsOpen }) => {
   const [password, setPassword] = useState("");
   const [repeatPassword, setRepeatPassword] = useState("");
 
-  console.log(email, username, password,repeatPassword);
+  const [mailError, setMailError] = useState("errorMail");
+  const [usernameError, setUsernameError] = useState("errorUsername");
+  const [passwordError, setPasswordError] = useState("errorPassword");
+  const [repeatPasswordError, setRepeatPasswordError] = useState("errorRepeatPassword");
+
+  console.log(email, username, password, repeatPassword);
 
   return (
     <div
@@ -34,9 +39,12 @@ const RegisterModal = ({ isOpen, setIsOpen }) => {
             className="w-wull mx-auto drop-shadow-2xl mb-3"
           />
           <div className="flex flex-col">
-            <label htmlFor="" className="text-red-800 font-bold">
-              Mail
-            </label>
+            <div className="flex justify-between">
+              <label htmlFor="" className="text-red-800 font-bold">
+                Mail
+              </label>
+              <span className="text-red-400">{mailError}</span>
+            </div>
             <input
               type="email"
               className="bg-sky-50 border-b-2"
@@ -45,9 +53,12 @@ const RegisterModal = ({ isOpen, setIsOpen }) => {
             />
           </div>
           <div className="flex flex-col">
-            <label htmlFor="" className="text-red-800 font-bold">
-              Username
-            </label>
+          <div className="flex justify-between">
+              <label htmlFor="" className="text-red-800 font-bold">
+                Username
+              </label>
+              <span className="text-red-400">{usernameError}</span>
+            </div>
             <input
               type="text"
               className="bg-sky-50 border-b-2"
@@ -56,9 +67,12 @@ const RegisterModal = ({ isOpen, setIsOpen }) => {
             />
           </div>
           <div className="flex flex-col">
-            <label htmlFor="" className="text-red-800 font-bold">
-              Password
-            </label>
+          <div className="flex justify-between">
+              <label htmlFor="" className="text-red-800 font-bold">
+                Password
+              </label>
+              <span className="text-red-400">{passwordError}</span>
+            </div>
             <input
               type="password"
               className="bg-sky-50 border-b-2"
@@ -67,15 +81,18 @@ const RegisterModal = ({ isOpen, setIsOpen }) => {
             />
           </div>
           <div className="flex flex-col">
-            <label htmlFor="" className="text-red-800 font-bold">
-              Repeat password
-            </label>
-            <input 
-                type="password" 
-                className="bg-sky-50 border-b-2" 
-                value={repeatPassword}
+          <div className="flex justify-between">
+              <label htmlFor="" className="text-red-800 font-bold">
+                Repeat Password
+              </label>
+              <span className="text-red-400">{repeatPasswordError}</span>
+            </div>
+            <input
+              type="password"
+              className="bg-sky-50 border-b-2"
+              value={repeatPassword}
               onChange={(e) => setRepeatPassword(e.target.value)}
-              />
+            />
           </div>
           <div className="flex items-center justify-center">
             <button className="bg-red-800 text-sky-50 font-bold text-2xl py-1 px-8 rounded-full mt-3">
