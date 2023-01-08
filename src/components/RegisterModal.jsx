@@ -6,19 +6,41 @@ import logo from "../assets/logo.png";
 import { GrClose } from "react-icons/gr";
 
 const RegisterModal = ({ isOpen, setIsOpen }) => {
-  //   let emailREGEX = `^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$`;
 
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [repeatPassword, setRepeatPassword] = useState("");
 
-  const [mailError, setMailError] = useState("errorMail");
-  const [usernameError, setUsernameError] = useState("errorUsername");
-  const [passwordError, setPasswordError] = useState("errorPassword");
-  const [repeatPasswordError, setRepeatPasswordError] = useState("errorRepeatPassword");
+  const [mailError, setMailError] = useState("");
+  const [usernameError, setUsernameError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
+  const [repeatPasswordError, setRepeatPasswordError] = useState("");
 
-  console.log(email, username, password, repeatPassword);
+  
+
+  const handleSubmit = () => {
+    //hahdle mail input error
+    if(email === ""){
+        setMailError("enter mail")
+    }else if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)){
+        setMailError("")
+    }else{
+        setMailError("not a valid mail")
+    }
+
+    //handle password comparing
+    if(password === repeatPassword){
+        setRepeatPasswordError("")
+    }else {
+        setRepeatPasswordError("different password")
+    }
+
+    console.log("Email:", email);
+    console.log("Username:", username);
+    console.log("Password:", password);
+    console.log("RepeatPassword:", repeatPassword);
+  }
 
   return (
     <div
@@ -95,7 +117,10 @@ const RegisterModal = ({ isOpen, setIsOpen }) => {
             />
           </div>
           <div className="flex items-center justify-center">
-            <button className="bg-red-800 text-sky-50 font-bold text-2xl py-1 px-8 rounded-full mt-3">
+            <button 
+                className="bg-red-800 text-sky-50 font-bold text-2xl py-1 px-8 rounded-full mt-3"
+                onClick={handleSubmit}
+            >
               Register
             </button>
           </div>
