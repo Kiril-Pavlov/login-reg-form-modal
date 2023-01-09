@@ -4,7 +4,7 @@
 
 > Responsive Modals for Register and Login Form.
 
-![screenshot](https://github.com/Kiril-Pavlov/login-reg-form-modal/blob/main/log-reg-mockup.png.png?raw=true)
+![screenshot](https://github.com/Kiril-Pavlov/login-reg-form-modal/blob/main/log-reg-mockup.png?raw=true)
 
 React app with two buttons that open two modals. One is for registering and the other is for login. Both modals are responsive and have some basic validation handling.
 
